@@ -1,0 +1,18 @@
+title Part 0 Exercise 0.6: Sequence diagram for new note with SPA \n\n\n
+
+note over browser:
+browser executes the event handler associated
+with the form submit button. It creates the 
+new note with the content and the date and 
+pushes the note onto the notes array. Then it
+calls the redraw notes function to render the
+notes in the browser itself.
+end note
+browser->server: HTTP POST[{"new note created"}] https://fullstack-exampleapp.herokuapp.com/new_note_spa
+
+note over server:
+server creates a new note by
+parsing the request post body
+end note
+
+server-->browser: 201 Created
